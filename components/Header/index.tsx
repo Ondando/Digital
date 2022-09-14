@@ -1,4 +1,7 @@
+import Image from "next/image"
 import React from "react"
+import avataricon from '../../assets/avataricon.png'
+import carticon from '../../assets/carticon.png'
 
 export default function Header() {
     return (
@@ -13,8 +16,8 @@ export default function Header() {
                     <input placeholder="Search" className="border-2 rounded w-3/4 text-4xl"></input> {/*  */}
                 </div>
                     <div className="flex flex-row gap-2 ">
-                        <p>Avatar</p>
-                        <p>ShopCard</p>
+                        <Image src={avataricon} alt='Account' height={48} width={48} layout={"fixed"} />
+                        <Image src={carticon} alt='Carrinho' height={48} width={48} layout={"fixed"} />
                     </div>
                 </div>
                 <div className="text-center md:invisible">

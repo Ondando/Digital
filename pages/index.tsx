@@ -5,6 +5,8 @@ import Header from '../components/Header'
 import Slider from '../components/Slider'
 import RightSideComponent from '../components/Slider/RightSideComponent'
 import styles from '../styles/Home.module.css'
+import logonb from '../assets/logonb.png'
+import Produtos from '../components/Produtos'
 
 
 interface ISectionText{
@@ -25,7 +27,6 @@ const Home: NextPage = () => {
 
       <Header />
       <main  className='m-1 md:container md:mx-auto'>
-
           <SectionText Texto='HOT STUFF' />
         <div id='SliderSection' className='md:flex md:flex-row'> 
           <div id='LeftWithImage'>
@@ -33,11 +34,21 @@ const Home: NextPage = () => {
           </div>
 
           <div id='RightWithComponents'>
-            <div className='md:pt-14'>
+            <div className='md:pt-14 space-y-10'>
               <RightSideComponent />
               <RightSideComponent />
               <RightSideComponent />
             </div>
+          </div>
+        </div>
+        <div id='ProdutosEmMaisVendidos'>
+            <SectionText Texto='Mais Vendidos' />
+          <Produtos/>
+        </div>
+        <div id='Banners'>
+          <div className='text-center p-2 border-2'>
+            <Image src={logonb} />
+            <button className=' rounded-md bg-blue-400 text-3xl p-2'  >Mostrar Mais</button>
           </div>
 
         </div>
