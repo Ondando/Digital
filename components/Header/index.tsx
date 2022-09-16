@@ -2,6 +2,7 @@ import Image from "next/image"
 import React from "react"
 import avataricon from '../../assets/avataricon.png'
 import carticon from '../../assets/carticon.png'
+import {FaBars} from 'react-icons/fa'
 
 export default function Header() {
     return (
@@ -9,7 +10,9 @@ export default function Header() {
             <div className="bg-pink-100 p-2 ">
                 <div className="flex flex-row justify-between">
                     <div className="flex flex-row gap-2">
-                        <p className="md:invisible">=</p>
+                        <button onClick={()=>console.log('Open Drawer')}>
+                        <FaBars/>
+                        </button>
                         <p className="text-2xl md:text-4xl">Digital</p>
                     </div>
                      <div className="text-center invisible md:visible md:w-full">
