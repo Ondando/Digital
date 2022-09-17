@@ -6,7 +6,7 @@ import {FaBars} from 'react-icons/fa'
 
 export default function Header() {
     return (
-        <div className="md:container md:mx-auto">
+        <div className="md:container md:mx-auto ">
             <div className="bg-pink-100 p-2 ">
                 <div className="flex flex-row justify-between">
                     <div className="flex flex-row gap-2">

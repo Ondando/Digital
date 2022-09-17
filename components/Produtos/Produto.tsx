@@ -1,6 +1,7 @@
 import Image from "next/image"
 import logonb from '../../assets/logonb.png';
 
+import {FaHeart,FaShoppingCart} from 'react-icons/fa'
 
 interface IProduto{
     Valor: string
@@ -12,9 +13,15 @@ export default function Produto(props:IProduto) {
                 <p></p>
                 <div className='flex flex-row justify-between'>
               <p>{ props.Valor}</p>
-                <div className='flex flex-row'>
-                  <p>LoveIcon</p>
-                  <p>ShopCardIcon</p>
+        <div className='flex flex-row'>
+          <button>
+
+                  <FaHeart/>
+          </button>
+          <button>
+
+                  <FaShoppingCart/>
+          </button>
 
                 </div>
                 </div>

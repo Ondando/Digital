@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Header from '../components/Header'
 import Slider from '../components/Slider'
 import RightSideComponent from '../components/Slider/RightSideComponent'
-import styles from '../styles/Home.module.css'
+
 import logonb from '../assets/logonb.png'
 import Produtos from '../components/Produtos'
 
