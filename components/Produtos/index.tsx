@@ -23,7 +23,7 @@ export default function Produtos() {
     },
   ];
   return (
-    <div id="Produtos" className="grid grid-cols-2">
+    <div id="Produtos" className="grid grid-cols-2 gap-2">
       {ProdutosLista.map((e) => <Produto key={e.key} Imagem={e.Image} Valor={e.price} />)}
     </div>
   );

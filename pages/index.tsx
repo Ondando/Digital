@@ -1,19 +1,18 @@
 import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
+
 import Header from '../components/Header';
 import Slider from '../components/Slider';
 import RightSideComponent from '../components/Slider/RightSideComponent';
 
-import logonb from '../assets/logonb.png';
 import Produtos from '../components/Produtos';
 
 interface ISectionText {
   Texto:string
 }
 function SectionText({ Texto }:ISectionText) {
-  return (<p>{Texto}</p>);
+  return (<p className="font-mono m-2 text-2xl">{Texto}</p>);
 }
 
 // eslint-disable-next-line react/function-component-definition
@@ -35,9 +34,10 @@ const Home: NextPage = () => (
 
         <div id="RightWithComponents">
           <div className="md:pt-14 space-y-10">
-            <RightSideComponent />
-            <RightSideComponent />
-            <RightSideComponent />
+            <SectionText Texto="Recomendacoes" />
+            <RightSideComponent Header="Coming Soon" LongText="adisaiadhsid" />
+            <RightSideComponent Header="Coming Soon" LongText="adisaiadhsid" />
+            <RightSideComponent Header="Coming Soon" LongText="adisaiadhsid" />
           </div>
         </div>
       </div>
@@ -45,16 +45,8 @@ const Home: NextPage = () => (
         <SectionText Texto="Mais Vendidos" />
         <Produtos />
       </div>
-      <div id="Banners">
-        <div className="text-center p-2 border-2">
-          <Image src={logonb} />
-          <button type="button" className=" rounded-md bg-blue-400 text-3xl p-2">Mostrar Mais</button>
-        </div>
-
-      </div>
 
     </main>
-
     <footer />
   </>
 );

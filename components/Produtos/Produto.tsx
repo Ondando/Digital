@@ -9,12 +9,12 @@ interface IProduto {
 }
 export default function Produto({ Valor, Imagem }:IProduto) {
   return (
-    <div id="Produto" className="border-2 rounded-md">
+    <div id="Produto" className="border-1 rounded-md">
       <Image src={Imagem || logonb} alt="" className="border-1 rounded-md" />
       <p />
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-between mx-2">
         <p>{ Valor}</p>
-        <div className="flex flex-row">
+        <div className="flex flex-row gap-3  ">
           <button type="button">
             <FaHeart />
           </button>

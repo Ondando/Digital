@@ -9,16 +9,11 @@ export default function Slider() {
       <div className="border-2 rounded-md">
         <div className="border md:h-[900px] md:w-[900px]">
           <Image src={logonb} layout="responsive" alt="Logo" />
-
         </div>
-
         <div className="flex flex-row justify-between h-12 p-2">
-
           <p className="text-1xl">Nome do produto</p>
           <p className="text-2xl">| 12.500 kzs</p>
-
         </div>
-
       </div>
     </div>
   );
