@@ -4,12 +4,13 @@ import { FaHeart, FaShoppingCart } from 'react-icons/fa';
 import logonb from '../../assets/logonb.png';
 
 interface IProduto {
+  Imagem:any
   Valor: string
 }
-export default function Produto({ Valor }:IProduto) {
+export default function Produto({ Valor, Imagem }:IProduto) {
   return (
     <div id="Produto" className="border-2 rounded-md">
-      <Image src={logonb} alt="" className="border-1 rounded-md" />
+      <Image src={Imagem || logonb} alt="" className="border-1 rounded-md" />
       <p />
       <div className="flex flex-row justify-between">
         <p>{ Valor}</p>
