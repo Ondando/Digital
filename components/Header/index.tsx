@@ -1,52 +1,75 @@
-import Image from 'next/image';
-import React, { useState } from 'react';
-import { FaBars, FaSearch } from 'react-icons/fa';
-import avataricon from '../../assets/avataricon.png';
-import carticon from '../../assets/carticon.png';
-import Drawer from '../Drawer';
+import React, { useContext, useState } from "react";
+import { FaBars, FaSearch, FaHeart, FaShoppingCart } from "react-icons/fa";
+import { IoMdPerson } from "react-icons/io";
+import { CategoryContext } from "../../context";
+import SearcherContext, {
+  SearcherProvider,
+} from "../../context/SearcherContext";
+import Drawer from "../Drawer";
 
-function SerchInput() {
+function Searcher() {
+  const [Search, setSearch] = useContext(SearcherContext);
   return (
-    <>
-    </>
+    <SearcherProvider>
+      <div>
+        <div className="flex flex-row justify-between px-2 items-center m-2 border-2 rounded-full">
+          <input
+            placeholder="Procurar..."
+            className="w-full"
+            onChange={(v) => {
+              const val = v.currentTarget.value;
+              setSearch(val);
+              console.log(Search);
+            }}
+          />
+          <FaSearch />
+        </div>
+      </div>
+    </SearcherProvider>
   );
 }
 
 export default function Header() {
-  const [DrawerOpen, setDrawerOpen] = useState(true);
-  return (
-    <div className="md:container md:mx-auto ">
-      <div className="bg-pink-100 p-2 ">
-        <div className="flex flex-row justify-between">
-          <div className="flex flex-row gap-2">
-            <button className="md:invisible" type="button" onClick={() => setDrawerOpen(true)}>
-              <FaBars />
-            </button>
-            <Drawer isOpen={DrawerOpen} setIsOpen={setDrawerOpen} />
-            <p className="text-2xl md:text-4xl">Digital</p>
-          </div>
-          <div className="text-center invisible md:visible md:w-full">
-            <SerchInput />
-          </div>
-          <div className="flex flex-row gap-2 ">
-            <Image src={avataricon} alt="Account" height={48} width={48} layout="fixed" />
-            <Image src={carticon} alt="Carrinho" height={48} width={48} layout="fixed" />
-          </div>
-        </div>
-        <div className=" md:invisible mx-auto w-11/12 border-2 rounded-full bg-white justify-center flex flex-row">
-          <input placeholder="Search" className="text-2xl  bg-transparent" />
-          <button type="button">
-            <FaSearch />
-          </button>
-        </div>
-      </div>
-      <div className="flex flex-row justify-center gap-2 invisible md:visible">
-        <p>Categoria </p>
-        <p>CategoriaB </p>
-        <p>CategoriaC </p>
-        <p>CategoriaD </p>
-      </div>
+  const [DrawerOpen, setDrawerOpen] = useState(false);
+  const CategoriaContext = useContext(CategoryContext);
 
+  return (
+    <div className="mx-auto container">
+      <div className=" flex flex-row items-center justify-between m-2">
+        <div className="flex flex-row gap-2">
+          <FaBars
+            className="md:hidden"
+            size={24}
+            onClick={() => setDrawerOpen(true)}
+          />
+          <p>Digital</p>
+        </div>
+        <div className="hidden md:block w-1/2">
+          <Searcher />
+        </div>
+        <div className="flex flex-row justify-between gap-2">
+          <div>
+            <FaShoppingCart size={24} />
+          </div>
+          <FaHeart
+            size={24}
+            onClick={() => (window.location.href = "/whislist")}
+          />
+          <IoMdPerson size={24} />
+        </div>
+      </div>
+      <div className="md:hidden">
+        <Searcher />
+      </div>
+      <div className="w-full border m-1" />
+      <div className="hidden  md:block space-x-2 text-center ">
+        {CategoriaContext.map((categoria) => (
+          <button className=" rounded-3xl border-2 p-2" type="button">
+            {categoria}
+          </button>
+        ))}
+      </div>
+      <Drawer isOpen={DrawerOpen} setIsOpen={setDrawerOpen} />
     </div>
   );
 }
