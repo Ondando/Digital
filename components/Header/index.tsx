@@ -1,14 +1,14 @@
-import TabButton from '../TabButton';
-import Handle from 'functions/OpenTab';
-import Searcher from '../Searchear';
-import WishlistLoveButton from '../Icons/WishlistLoveButton';
-import AvatarButton from '../Icons/AvatarButton';
-import ShopCartButton from '../Icons/ShopCartButton';
-import CategoryList from './CategoryList';
+import Handle from "functions/OpenTab";
+import CategoryList from "./CategoryList";
+import TabButton from "@ui/TabButton";
+import Searcher from "@ui/Searchear";
+import WishlistLoveButton from "@ui/Icons/WishlistLoveButton";
+import AvatarButton from "@ui/Icons/AvatarButton";
+import ShopCartButton from "@ui/Icons/ShopCartButton";
 
 export default function Header() {
   return (
-    <div>
+    <div className="md:container md:mx-auto">
       <div className="flex flex-row justify-between">
         <div className="flex flex-row gap-2">
           <div className="md:hidden">

@@ -1,6 +1,8 @@
-import '@/styles/dist.css';
-import Header from '@/ui/Header';
-import React from 'react';
+import "@styles/globals.css";
+
+import { Suspense } from "react";
+import Header from "../components/Header";
+import Loading from "./loading";
 
 export default function RootLayout({
   children,
@@ -8,14 +10,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
-      <head>
-        <title>Ondando</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </head>
-      <body className="container mx-auto">
+    <html lang="en">
+      <head />
+      <body className="m-2">
         <Header />
-        {children}
+        <Suspense fallback={<Loading />}>{children}</Suspense>
       </body>
     </html>
   );

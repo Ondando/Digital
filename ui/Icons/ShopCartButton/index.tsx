@@ -1,9 +1,10 @@
+import Icons from '..';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 
 export default function ShopCartButton() {
   return (
-    <div>
+    <Icons>
       <AiOutlineShoppingCart size={24} />
-    </div>
+    </Icons>
   );
 }
