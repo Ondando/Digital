@@ -1,7 +1,0 @@
-type Product {
-  slug: String!
-  name: String!
-  platform: String
-  seller: String
-  assets: [String]
-}

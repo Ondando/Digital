@@ -1,0 +1,80 @@
+#User Schema
+enum UserStatus {
+  BAN
+  ACTIVE
+}
+type User {
+  email: String! @unique
+  lastName: String
+  firstName: String
+  phoneNumber: Int
+  status: UserStatus!
+  buyer: BuyerAccount!
+  seller: SellerAccount
+}
+#End
+
+#Listed Products Schema
+enum ListedProductStatus {
+  NULL
+  ACTIVE
+  IN_PROCESS
+  COMPLETED
+}
+type ListedProduct {
+  slug: String! @unique
+  price: Int!
+  product: Product! @unique(index: "get_all_listed_Producs_by_Product")
+  productKey: String!
+  seller: SellerAccount!
+  status: ListedProductStatus! @unique
+  buyersWishlisted: [BuyerAccount] @relation
+}
+#End
+
+#Seller Schema
+enum SellerAccountStatus {
+  ACTIVE
+  UN_ACTIVE
+}
+type SellerAccount {
+  user: User!
+  slug: String! @unique
+  sellerName: String! @unique
+  status: SellerAccountStatus!
+  listedProducts: [ListedProduct]
+}
+#End
+
+#Product Schema
+enum Platforms {
+  PC
+  PS3
+  PS4
+  PS5
+  STEAM
+  X_BOX
+  X_BOX_ONE
+}
+type Product {
+  title: String! @unique
+  description: String
+  platform: [Platforms!]
+  activationRule: String
+}
+#End
+
+#Buyer Schema
+type BuyerAccount {
+  user: User!
+  wishList: [ListedProduct]
+  purchasedProducts: [PurchasedProduct]
+}
+#End
+
+#Purchased Product schema
+type PurchasedProduct {
+  buyer: BuyerAccount! @unique
+  product: ListedProduct! @unique
+}
+#End
