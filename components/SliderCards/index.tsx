@@ -7,7 +7,7 @@ interface ISliderCards {
 export default function SliderCards({ cards }: ISliderCards) {
   return (
     <>
-      <div className="grid grid-cols-2 " >
+      <div className="grid grid-cols-2 ">
         {cards.map((e: ICard, k) => {
           return (
             <div className="p-1" key={k}>
