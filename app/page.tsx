@@ -16,7 +16,7 @@ export default function Page() {
     Price: "59,99",
     Seller: "Joao",
   };
-  const Cards: ICard[] = [GodOfWar, Naruto, GodOfWar, Naruto, GodOfWar, Naruto];
+  const Cards: ICard[] = [GodOfWar, Naruto, GodOfWar, Naruto];
 
   return (
     <div className="md:flex md:flex-row md:justify-around">
@@ -24,7 +24,7 @@ export default function Page() {
         <p>Hot Stuff</p>
         <ImageSlider />
       </div>
-      <div>
+      <div className="md:w-3/12">
         <p>Recomended</p>
         <SliderCards cards={Cards} />
       </div>

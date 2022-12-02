@@ -14,9 +14,9 @@ export default function Card({
   Price,
 }: ICard) {
   return (
-    <div>
-      <div>
-        <Image alt={ProdutName} src={ProductImage} height={250} width={180} />
+    <div className="p-1 border rounded">
+      <div className="relative h-64 w-full">
+        <Image alt={ProdutName} src={ProductImage} fill />
       </div>
       <div>
         <p>{ProdutName}</p>
