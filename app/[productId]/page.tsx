@@ -1,28 +1,20 @@
 "use client";
-import { useState } from "react";
-import GodOfWar from "contexts/games/goofwar";
-import SpiderMan from "contexts/games/spiderman";
+import { use, useState } from "react";
 import IProduct from "interfaces/IProduct";
+import GetProduct from "functions/GetProduct";
 
-interface IProductPage {
-  params?: { productId: string };
-}
-
-export default function ProductPage({ params }: IProductPage) {
-  const productId = params.productId;
-  const Games: IProduct[] = [GodOfWar, SpiderMan];
-  const [Product, setProduct] = useState<IProduct>();
-  console.log(params.productId);
-
+export default function ProductPage({ params }) {
+  const produto: IProduct = use(GetProduct(params.productId));
+  console.log(produto);
   return (
     <div>
-      {Product && (
+      {produto && (
         <>
-          <div key={Product.id}>
+          <div key={produto.id}>
             <div>
               <p>Image and video caroussel/slider </p>
-              <p>{Product.name}</p>
-              <p>{Product.platform}</p>
+              <p>{produto.name}</p>
+              <p>{produto.platform}</p>
             </div>
             <div>
               <p>activation rule</p>
