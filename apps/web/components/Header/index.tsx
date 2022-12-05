@@ -5,7 +5,7 @@ import { TabButton, WishlistLoveButton, AvatarButton, ShopCartButton } from 'ui'
 
 export default function Header() {
     return (
-        <div className="md:container md:mx-auto">
+        <div className="md:container md:mx-auto ">
             <div className="flex flex-row justify-between">
                 <div className="flex flex-row gap-2">
                     <div className="md:hidden">
