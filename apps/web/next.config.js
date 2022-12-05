@@ -8,4 +8,7 @@ module.exports = {
         outputFileTracingRoot: path.join(__dirname, '../../'),
         transpilePackages: ['ui'],
     },
+    images: {
+        domains: ['res.cloudinary.com'],
+    },
 };
