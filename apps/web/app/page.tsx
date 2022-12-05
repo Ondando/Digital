@@ -28,10 +28,11 @@ export default function HomePage() {
                 <button onClick={PostImage}>ola</button>
                 <p>Hot Stuff</p>
                 <CldImage width="960" height="600" src="maxresdefault_dbgzzx" sizes="100vw" />
-
+                <ImageSlider />
             </div>
             <div className="md:w-3/12">
                 <p>Recomended</p>
+                <SliderCards cards={Recomended} />
             </div>
         </div>
     );
