@@ -1,0 +1,19 @@
+{
+    "name": "database",
+    "version": "0.1.0",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": "./dist"
+    },
+    "scripts": {
+        "clean": "rm -rf dist",
+        "dev": "tsup src/index.tsx --format esm,cjs --dts --external react --watch",
+        "build": "tsup src/index.tsx --format esm,cjs --dts --external react"
+    },
+    "devDependencies": {
+        "tsup": "^6.5.0",
+        "tsconfig": "*",
+        "eslint-config-custom": "*"
+    }
+}

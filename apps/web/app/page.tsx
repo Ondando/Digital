@@ -3,19 +3,18 @@
 import { ICard } from '../components/Card';
 import ImageSlider from '../components/ImageSlider';
 import SliderCards from '../components/SliderCards';
+import cardimage from '../assets/cardimage.png';
 
 export default function HomePage() {
     const GodOfWar: ICard = {
         ProdutName: 'God of War',
-        ProductImage:
-            'https://res.cloudinary.com/djlawikle/image/upload/v1670261585/godofwar_y7nxra.webp',
+        ProductImage: cardimage,
         Price: '19,90',
         Seller: 'Joao',
     };
     const Naruto: ICard = {
         ProdutName: 'Netlifx',
-        ProductImage:
-            'https://res.cloudinary.com/djlawikle/image/upload/v1670261691/netflix_isyp77.jpg',
+        ProductImage: cardimage,
         Price: '23,99',
         Seller: 'Joao',
     };

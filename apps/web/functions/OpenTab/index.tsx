@@ -1,5 +1,5 @@
 'use client';
 
 export default function Handle() {
-  console.log('oi');
+    return console.log('oi');
 }
