@@ -5,11 +5,11 @@ const Pt = pt_pt;
 const En = en_us;
 
 export enum ELanguages {
-  PT,
-  EN,
+    PT,
+    EN,
 }
 
 export default function L(currentLanguage: ELanguages) {
-  const l = currentLanguage === ELanguages.EN ? En : Pt;
-  return l;
+    const l = currentLanguage === ELanguages.EN ? En : Pt;
+    return l;
 }
