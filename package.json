@@ -17,7 +17,6 @@
         "dev": "turbo run dev --parallel",
         "format": "prettier --write \"**/*.{ts,tsx,md}\""
     },
-    "test": {},
     "lint-staged": {
         "apps/**/*.{js,ts,jsx,tsx}": [
             "eslint --fix"
@@ -43,8 +42,5 @@
         "react-easy-swipe": "^0.0.22",
         "react-responsive-carousel": "^3.2.23",
         "turbo": "1.6.3"
-    },
-    "dev": {
-        "cache": false
     }
 }
