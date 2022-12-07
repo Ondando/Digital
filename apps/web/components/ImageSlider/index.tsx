@@ -11,7 +11,7 @@ export default function ImageSlider() {
     ]; // get array of featured games or software
     // Handle function to make!
 
-    const handleSelect = (selectedIndex, e) => {
+    const handleSelect = (selectedIndex) => {
         setIndex(selectedIndex);
     };
     return (

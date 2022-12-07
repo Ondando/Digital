@@ -7,6 +7,7 @@ import { AiOutlineSearch } from 'react-icons/ai';
 
 export default function Searcher() {
     const [Value, setValue] = useState();
+    Value;
     return (
         <div className=" m-1 flex flex-row rounded border border-solid border-black p-1">
             <TextInputDefault EvtOnChange={setValue} PlaceHolder={L(ELanguages.PT)['Search...']} />
