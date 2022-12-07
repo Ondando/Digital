@@ -29,6 +29,7 @@
         ]
     },
     "devDependencies": {
+        "bootstrap": "^5.2.3",
         "eslint": "^8.28.0",
         "eslint-config-custom": "*",
         "faunadb": "^4.7.1",
@@ -37,6 +38,9 @@
         "next-cloudinary": "^1.2.0",
         "prettier": "^2.8.0",
         "prettier-plugin-tailwindcss": "^0.1.11",
+        "react-bootstrap": "^2.6.0",
+        "react-easy-swipe": "^0.0.22",
+        "react-responsive-carousel": "^3.2.23",
         "turbo": "1.6.3"
     }
 }

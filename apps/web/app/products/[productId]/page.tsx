@@ -1,16 +1,15 @@
 'use client';
-import { use } from 'react';
 import IProduct from '../../../interfaces/IProduct';
-import GetProduct from '../../../functions/GetProduct';
 
-export default function ProductPage({ params }) {
+// Product page
+export default function Page({ params }) {
     //const produto: IProduct = use(GetProduct(params.productId));
     const produto: IProduct = {
-        assets: [],
-        id: '',
-        platform: '',
-        name: '',
-        seller: '',
+        id: 'da',
+        name: 'dsadas',
+        seller: 'dasdasd',
+        assets: [''],
+        platform: 'sdaad',
     };
     // console.log(produto);
     return (

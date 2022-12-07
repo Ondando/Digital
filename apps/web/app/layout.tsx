@@ -1,7 +1,7 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/globals.css';
 // import '../styles/output.css';
 import 'ui/styles.css';
-
 import React, { Suspense } from 'react';
 import Loading from './loading';
 import Header from '../components/Header';
