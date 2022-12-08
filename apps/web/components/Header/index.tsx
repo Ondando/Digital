@@ -1,16 +1,16 @@
-import Handle from '../../functions/OpenTab';
 import CategoryList from './CategoryList';
 import Searcher from '../../components/Searchear';
-import { TabButton, WishlistLoveButton, AvatarButton, ShopCartButton } from 'ui';
+import { WishlistLoveButton, AvatarButton, ShopCartButton } from 'ui';
+import { AiOutlineMenu } from 'react-icons/ai';
 
 export default function Header() {
     return (
         <div className="md:container md:mx-auto ">
             <div className="flex flex-row justify-between">
                 <div className="flex flex-row gap-2">
-                    <div className="md:hidden">
-                        <TabButton size={24} evt={Handle} />
-                    </div>
+                    <label className="drawer-button  md:hidden" htmlFor="my-drawer">
+                        <AiOutlineMenu size={24} />
+                    </label>
                     <div>
                         <p>Ondando</p>
                     </div>

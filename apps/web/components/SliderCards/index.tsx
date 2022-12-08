@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { ICard, Card } from '../Card';
 
 interface ISliderCards {
@@ -11,12 +12,14 @@ export default function SliderCards({ cards }: ISliderCards) {
                 {cards.map((e: ICard, k) => {
                     return (
                         <div className="p-1" key={k}>
-                            <Card
-                                Price={e.Price}
-                                Seller={e.Seller}
-                                ProdutName={e.ProdutName}
-                                ProductImage={e.ProductImage}
-                            />
+                            <Link href={`/products/${encodeURIComponent(e.ProdutName)}`}>
+                                <Card
+                                    Price={e.Price}
+                                    Seller={e.Seller}
+                                    ProdutName={e.ProdutName}
+                                    ProductImage={e.ProductImage}
+                                />
+                            </Link>
                         </div>
                     );
                 })}

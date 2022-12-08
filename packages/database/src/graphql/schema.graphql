@@ -1,109 +1,113 @@
 #User Schema
 enum UserStatus {
-  BAN
-  ACTIVE
+    BAN
+    ACTIVE
 }
 type User {
-  email: String! @unique
-  lastName: String
-  firstName: String
-  phoneNumber: Int
-  status: UserStatus!
-  buyer: BuyerAccount!
-  seller: SellerAccount
+    email: String! @unique
+    lastName: String
+    firstName: String
+    phoneNumber: Int
+    status: UserStatus!
+    buyer: BuyerAccount!
+    seller: SellerAccount
 }
 #End
 
 #Listed Products Schema
 enum ListedProductStatus {
-  NULL
-  ACTIVE
-  IN_PROCESS
-  COMPLETED
+    NULL
+    ACTIVE
+    IN_PROCESS
+    COMPLETED
 }
 type ListedProduct {
-  slug: String! @unique
-  price: Int!
-  product: Product! @unique(index: "get_all_listed_Producs_by_Product")
-  productKey: String!
-  seller: SellerAccount!
-  status: ListedProductStatus! @unique
-  buyersWishlisted: [BuyerAccount] @relation
+    slug: String! @unique
+    price: Int!
+    product: Product! @unique(index: "get_all_listed_Producs_by_Product")
+    productKey: String!
+    seller: SellerAccount!
+    status: ListedProductStatus! @unique
+    buyersWishlisted: [BuyerAccount] @relation
 }
 #End
 
 #Seller Schema
 enum SellerAccountStatus {
-  ACTIVE
-  UN_ACTIVE
+    ACTIVE
+    UN_ACTIVE
 }
 type SellerAccount {
-  user: User!
-  slug: String! @unique
-  sellerName: String! @unique
-  status: SellerAccountStatus!
-  listedProducts: [ListedProduct]
+    user: User!
+    slug: String! @unique
+    sellerName: String! @unique
+    status: SellerAccountStatus!
+    listedProducts: [ListedProduct]
 }
 #End
 
 #Product Schema
 enum Platforms {
-  PC
-  PS3
-  PS4
-  PS5
-  STEAM
-  X_BOX
-  X_BOX_ONE
+    PC
+    PS3
+    PS4
+    PS5
+    STEAM
+    X_BOX
+    X_BOX_ONE
 }
 type Product {
-  title: String! @unique
-  type: ProductType
-  activationRule: String
+    title: String! @unique
+    type: ProductType
+    activationRule: String
 }
 #End
 
 #Buyer Schema
 type BuyerAccount {
-  user: User!
-  wishList: [ListedProduct]
-  purchasedProducts: [PurchasedProduct]
+    user: User!
+    wishList: [ListedProduct]
+    purchasedProducts: [PurchasedProduct]
 }
 #End
 
 #Purchased Product schema
 type PurchasedProduct {
-  buyer: BuyerAccount! @unique
-  product: ListedProduct! @unique
+    buyer: BuyerAccount! @unique
+    product: ListedProduct! @unique
 }
 #End
 
 enum ProductType {
-  GameProduct
-  SoftwareProduct
+    GameProduct
+    SoftwareProduct
 }
 type SoftwareProduct {
-  products: [Product] @relation
+    products: [Product] @relation
 }
 
 type GameProduct {
-  products: [Product] @relation
-  about: String
-  tags: [String]
-  assets: [String]
-  publisher: String
-  developer: String
-  ageRating: String
-  editions: [String]
-  releaseDate: String
-  websiteLink: String
-  gender: [GameGenders]
-  systemRequire: String
-  platforms: [Platforms]
-  similarGames: [Product] @relation
+    products: [Product] @relation
+    about: String
+    tags: [String]
+    assets: [String]
+    publisher: String
+    developer: String
+    ageRating: String
+    editions: [String]
+    releaseDate: String
+    websiteLink: String
+    gender: [GameGenders]
+    systemRequire: String
+    platforms: [Platforms]
+    similarGames: [Product] @relation
 }
 
 enum GameGenders {
-  ACTION
-  ADVENTURE
+    ACTION
+    ADVENTURE
+}
+
+type FeaturedProducts {
+    products: [product]
 }
