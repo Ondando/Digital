@@ -1,9 +1,7 @@
-
 import "./globals.css";
-import React, { Suspense } from "react";
-import Loading from "./loading";
-import Header from "../components/Header";
-import Sidebar from "./SideBar";
+import React from "react";
+import Header from "@/components/Header";
+import Sidebar from "@/components/SideBar";
 
 export default function RootLayout({
   children,
@@ -12,18 +10,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      {/*
+        <head /> will contain the components returned by the nearest parent
+        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
+      */}
       <head />
-      <body className="drawer m-2">
+      <body className="drawer">
         <input
           id="my-drawer"
           type="checkbox"
           className="drawer-toggle"
           key={1}
         />
-
         <div className="drawer-content">
           <Header />
-          <Suspense fallback={<Loading />}>{children}</Suspense>
+          {children}
         </div>
         <Sidebar />
       </body>

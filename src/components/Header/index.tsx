@@ -1,39 +1,31 @@
-import CategoryList from "./CategoryList";
-import Searcher from "../../components/Searchear";
-
-import { AiOutlineMenu } from "react-icons/ai";
-import { AvatarButton } from "@/ui/Icons/AvatarButton";
-import { ShopCartButton } from "@/ui/Icons/ShopCartButton";
-import { WishlistLoveButton } from "@/ui/Icons/WishlistLoveButton";
-
+import TabButton from "./TabButton";
+import Avatar from "./Avatar";
+import ShopCart from "./ShopCart";
+import WishList from "./WishList";
+import Searchear from "../Searchear";
+import CategoryList from "../CategoryList";
 export default function Header() {
   return (
-    <div className="md:container md:mx-auto ">
-      <div className="flex flex-row justify-between">
-        <div className="flex flex-row gap-2">
-          <label className="drawer-button  md:hidden" htmlFor="my-drawer">
-            <AiOutlineMenu size={24} />
-          </label>
-          <div>
-            <p>Ondando</p>
-          </div>
+    <div>
+      <div className="navbar bg-base-100">
+        <div className="navbar-start">
+          <TabButton />
+          <a className="btn-ghost btn text-xl normal-case">Ondando</a>
         </div>
-        <div className="hidden w-1/2 md:block">
-          <Searcher />
+        <div className="navbar-center hidden md:block md:w-96">
+          <Searchear />
         </div>
-        <div className="flex flex-row gap-2">
-          <WishlistLoveButton />
-          <AvatarButton />
-          <ShopCartButton />
+        <div className="navbar-end">
+          <ShopCart />
+          <WishList />
+          <Avatar />
         </div>
       </div>
-      <div>
-        <div className="md:hidden">
-          <Searcher />
-        </div>
-        <div className="hidden md:block">
-          <CategoryList />
-        </div>
+      <div className="container mx-auto max-w-xs md:hidden ">
+        <Searchear />
+      </div>
+      <div className="hidden justify-center gap-2 md:flex ">
+        <CategoryList />
       </div>
     </div>
   );

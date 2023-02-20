@@ -1,21 +1,20 @@
 "use client";
+import React, { useState } from "react";
 
-import L, { ELanguages } from "./../../languages";
-import { useState } from "react";
-
-import { AiOutlineSearch } from "react-icons/ai";
-import { TextInputDefault } from "@/ui/TextInput";
-
-export default function Searcher() {
-  const [Value, setValue] = useState();
-  Value;
+export default function Searchear() {
+  const [SearchValue, setSearchValue] = useState("");
+  function HandleChange(e: React.FormEvent<HTMLInputElement>) {
+    e.preventDefault();
+    setSearchValue(e.currentTarget.value);
+  }
   return (
-    <div className=" m-1 flex flex-row rounded border border-solid border-black p-1">
-      <TextInputDefault
-        EvtOnChange={setValue}
-        PlaceHolder={L(ELanguages.PT)["Search..."]}
+    <div className="form-control">
+      <input
+        type="text"
+        placeholder="Search..."
+        className="input-bordered input"
+        onChange={HandleChange}
       />
-      <AiOutlineSearch size={24} />
     </div>
   );
 }
