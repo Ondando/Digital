@@ -1,4 +1,4 @@
-import { Categorias } from "@/context/CategoriasLista";
+import { Categorias } from "@/data/dumbData";
 
 export default function Sidebar() {
   return (

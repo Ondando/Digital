@@ -4,7 +4,8 @@ import ShopCart from "./ShopCart";
 import WishList from "./WishList";
 import Searchear from "../Searchear";
 import CategoryList from "../CategoryList";
-import { Users } from "@/context/dumbData";
+import { Users } from "@/data/dumbData";
+
 export default function Header() {
   const user = Users[0];
   return (

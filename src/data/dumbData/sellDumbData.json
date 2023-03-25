@@ -1,0 +1,12 @@
+[
+  {
+    "seller": "Seller",
+    "product": "Product",
+    "price": 2
+  },
+  {
+    "seller": "Seller 2",
+    "product": "Product 2",
+    "price": 30
+  }
+]

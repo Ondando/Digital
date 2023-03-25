@@ -1,4 +1,4 @@
-import { Categorias } from "@/context/CategoriasLista";
+import { Categorias } from "@/data/dumbData";
 import { CategoryListButton } from "@/ui/Button";
 import { Text } from "@/ui/Text";
 

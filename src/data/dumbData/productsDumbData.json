@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Microsoft Office 365 Personal",
+    "longDescription": "1-year subscription for 1 user. Includes Word, Excel, PowerPoint, OneNote, Outlook, Publisher, and Access.",
+    "shortDescription": "1-year subscription for 1 user",
+    "assets": ["https://www.pythonblogs.com/wp-content/uploads/2020/01/Microsoft-office-365-Product-Key.jpg"],
+    "videosLink": [
+      {
+        "platform": "YouTube",
+        "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      }
+    ],
+    "activeSelling": [],
+    "ProductPlatform": "PC"
+  },
+  {
+    "name": "Grand Theft Auto V",
+    "longDescription": "The critically acclaimed and record-breaking open-world game from Rockstar Games, now available on PC.",
+    "shortDescription": "Open-world action game",
+    "assets": ["https://i0.wp.com/gamehero.co.za/wp-content/uploads/2019/06/grand-theft-auto-v-premium-online-edition-cover-e1570476540377.jpg?fit=720%2C1001&ssl=1"],
+    "videosLink": [
+      {
+        "platform": "YouTube",
+        "link": "https://www.youtube.com/watch?v=QkkoHAzjnUs"
+      }
+    ],
+    "activeSelling": [],
+    "ProductPlatform": "PS5"
+  },
+  {
+    "name": "Adobe Creative Cloud",
+    "longDescription": "Get access to all the Adobe creative apps with a monthly subscription to Creative Cloud.",
+    "shortDescription": "Monthly subscription to Adobe Creative Cloud",
+    "assets": ["https://ekeyms.com/wp-content/uploads/2020/09/Adobe-Creative-Cloud.jpg"],
+    "videosLink": [
+      {
+        "platform": "YouTube",
+        "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      }
+    ],
+    "activeSelling": [],
+    "ProductPlatform": "PC"
+  },
+  {
+    "name": "Windows 10 Pro",
+    "longDescription": "Get the latest version of Windows with advanced security features and tools for productivity.",
+    "shortDescription": "Digital key for Windows 10 Pro",
+    "assets": ["https://www.pythonblogs.com/wp-content/uploads/2020/01/Microsoft-office-365-Product-Key.jpg"],
+    "videosLink": [],
+    "activeSelling": [],
+    "ProductPlatform": "PC"
+  }
+]

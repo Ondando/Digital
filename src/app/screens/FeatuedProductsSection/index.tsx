@@ -1,5 +1,5 @@
 import { Card } from "@/components/Card";
-import { FeaturedProducts, products } from "@/context/Products";
+import { FeaturedProducts } from "@/data/dumbData";
 
 export default function FeatuedProductsSection() {
   return (
@@ -7,16 +7,8 @@ export default function FeatuedProductsSection() {
       <h1>Featured Products</h1>
       <div className="hidden md:block">
         <div className=" md:grid md:grid-cols-6 md:gap-2">
-          {products.map((e, k) => {
-            return (
-              <Card
-                key={k}
-                ProdutName={e.ProdutName}
-                ProductImage={e.ProductImage}
-                Seller={e.Seller}
-                Price={e.Price}
-              />
-            );
+          {FeaturedProducts.map((e, k) => {
+            return <Card key={k} name={e.name} image={e.assets[0]} />;
           })}
         </div>
       </div>
@@ -24,12 +16,7 @@ export default function FeatuedProductsSection() {
         {FeaturedProducts.map((e, k) => {
           return (
             <div className="carousel-item w-fit border-2" key={k}>
-              <Card
-                ProdutName={e.ProdutName}
-                ProductImage={e.ProductImage}
-                Seller={e.Seller}
-                Price={e.Price}
-              />
+              <Card key={k} name={e.name} image={e.assets[0]} />;
             </div>
           );
         })}

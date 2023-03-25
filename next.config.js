@@ -5,7 +5,12 @@ const nextConfig = {
   },
 
   images: {
-    domains: ['res.cloudinary.com'],
+    domains: [
+      "res.cloudinary.com",
+      "www.pythonblogs.com",
+      "i0.wp.com",
+      "ekeyms.com",
+    ],
   },
 };
 
