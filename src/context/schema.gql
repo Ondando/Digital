@@ -1,0 +1,60 @@
+enum TransactionStatus {
+  ACTIVE
+  IN_ACTIVE
+  AWAIT_PAYMENT
+  UNDER_REVIEW
+}
+
+enum ProductPlatform {
+  PS4
+  PS5
+  PC
+  NITENDO
+}
+
+type VideoLink {
+  platform: String!
+  link: String!
+}
+
+type UserAccount {
+  email: String!
+  password: String!
+  lastName: String!
+  firstName: String!
+  sellerAccount: Seller
+  buyerAccount: Buyer
+}
+
+type Seller {
+  userAccount: UserAccount!
+  sells: [Sell!]
+}
+
+type Sell {
+  seller: Seller!
+  product: Product!
+  price: Float!
+}
+
+type Product {
+  name: String!
+  longDescription: String!
+  shortDescription: String!
+  assets: [String!]!
+  videosLink: [VideoLink!]
+  activeSelling: [Sell!]!
+  platform: ProductPlatform
+}
+
+type Buyer {
+  userAccount: UserAccount!
+  transactions: [Transaction!]
+}
+
+type Transaction {
+  sell: Sell!
+  buyer: Buyer!
+  status: TransactionStatus!
+  data: String!
+}

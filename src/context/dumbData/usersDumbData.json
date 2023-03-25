@@ -1,0 +1,49 @@
+[
+  {
+    "email": "john.doe@example.com",
+    "password": "p@ssw0rd",
+    "lastName": "Doe",
+    "firstName": "John",
+    "avatar":"",
+    "sellerAccount": null,
+    "buyerAccount": null
+  },
+
+  {
+    "email": "jane.doe@example.com",
+    "password": "s3cur3p@ss",
+    "lastName": "Doe",
+    "firstName": "Jane",
+    "avatar":"",
+
+    "sellerAccount": null,
+    "buyerAccount": null
+  },
+  {
+    "email": "bob.smith@example.com",
+    "password": "qwerty",
+    "lastName": "Smith",
+    "firstName": "Bob",
+    "avatar":"",
+    "sellerAccount": null,
+    "buyerAccount": null
+  },
+  {
+    "email": "alice.wonder@example.com",
+    "password": "pa$$phrase",
+    "lastName": "Wonder",
+    "firstName": "Alice",
+    "avatar":"",
+    "sellerAccount": null,
+    "buyerAccount": null
+  },
+  {
+    "email": "david.gonzalez@example.com",
+    "password": "1L0v3Y0u",
+    "lastName": "Gonzalez",
+    "firstName": "David",
+    "avatar":"",
+    "sellerAccount": null,
+    "buyerAccount": null
+  }
+]

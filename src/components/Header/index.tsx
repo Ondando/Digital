@@ -4,7 +4,9 @@ import ShopCart from "./ShopCart";
 import WishList from "./WishList";
 import Searchear from "../Searchear";
 import CategoryList from "../CategoryList";
+import { Users } from "@/context/dumbData";
 export default function Header() {
+  const user = Users[0];
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -16,9 +18,9 @@ export default function Header() {
           <Searchear />
         </div>
         <div className="navbar-end">
-          <ShopCart />
-          <WishList />
-          <Avatar />
+          <ShopCart user={null} />
+          <WishList user={null} />
+          <Avatar user={null} />
         </div>
       </div>
       <div className="container mx-auto max-w-xs md:hidden ">

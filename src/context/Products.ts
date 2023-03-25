@@ -1,3 +1,5 @@
+import { ICarouselContent } from "@/components/Carousel";
+
 export const GodOfWar: ICard = {
   ProdutName: "God of War",
   ProductImage:
@@ -21,6 +23,7 @@ export const Naruto: ICard = {
 };
 
 export interface ICard {
+  // ProductID:string;
   ProdutName: string;
   ProductImage: string | any;
   Seller: string;
@@ -43,3 +46,64 @@ export const products = [
 ];
 
 export const SliderProducts: ICard[] = [Netlifx, GodOfWar, Netlifx, GodOfWar];
+
+export const SliderProductss: ICarouselContent[] = [
+  { ContentImage: GodOfWar.ProductImage, ContentLink: GodOfWar.ProdutName },
+  { ContentImage: Netlifx.ProductImage, ContentLink: Netlifx.ProdutName },
+  { ContentImage: Naruto.ProductImage, ContentLink: Naruto.ProdutName },
+  { ContentImage: GodOfWar.ProductImage, ContentLink: GodOfWar.ProdutName },
+];
+
+// main user interface
+interface IUserAcount {
+  email: string;
+  password: string;
+  lastName: string;
+  firstName: string;
+  sellerAccount: ISeller;
+  buyerAccount: IBuyer;
+}
+
+// product interface
+interface IProduct {
+  name: string;
+  longDescription: string;
+  shortDescription: string;
+  assets: string[];
+  videosLink: videoLink[];
+  activeSelling: ISell[];
+}
+interface videoLink {
+  platform: string;
+  link: string;
+}
+
+interface ISeller {
+  userAccount: IUserAcount;
+  sells: ISell[];
+}
+// to track who is selling and how many
+interface ISell {
+  seller: ISeller;
+  product: IProduct;
+  price: number;
+}
+
+interface IBuyer {
+  userAccount: IUserAcount;
+  transactions: ITransaction[];
+}
+
+interface ITransaction {
+  sell: ISell;
+  buyer: IBuyer;
+  status: ITransactionStatus;
+  data: string;
+}
+
+enum ITransactionStatus {
+  "ACTIVE",
+  "IN_ACTIVE",
+  "AWAIT_PAYMENT",
+  "UNDER_REVIEW",
+}

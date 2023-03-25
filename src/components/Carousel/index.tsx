@@ -1,10 +1,18 @@
-import { SliderProducts } from "@/context/Products";
 import Image from "next/image";
 
-export default function Carousel() {
+interface ICarousel {
+  CarouselContents: ICarouselContent[];
+}
+
+export interface ICarouselContent {
+  ContentImage: string;
+  ContentLink: string;
+}
+
+export default function Carousel(props: ICarousel) {
   return (
     <div className="carousel mx-auto h-56 rounded-lg border-2 shadow-md md:h-[480px] md:max-w-[768px]">
-      {SliderProducts.map((e, k) => {
+      {props.CarouselContents.map((e, k) => {
         return (
           <div
             key={k}
@@ -13,8 +21,8 @@ export default function Carousel() {
           >
             <Image
               fill
-              src={e.ProductImage}
-              alt={e.ProdutName}
+              src={e.ContentImage}
+              alt={e.ContentLink}
               className="w-full"
             />
             <div className="absolute inset-x-5 top-1/2 flex -translate-y-1/2 justify-between">

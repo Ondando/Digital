@@ -1,12 +1,12 @@
 import { Card } from "@/components/Card";
 import Carousel from "@/components/Carousel";
-import { SliderProducts } from "@/context/Products";
+import { SliderProducts, SliderProductss } from "@/context/Products";
 
 export default function SliderSection() {
   return (
     <div className="grid grid-cols-2 gap-2 md:grid md:grid-cols-6  md:grid-rows-2 ">
       <div className="col-span-full row-span-1 md:col-span-4 md:row-span-2">
-        <Carousel />
+        <Carousel CarouselContents={SliderProductss} />
       </div>
       <Card
         ProdutName={SliderProducts[1].ProdutName}

@@ -1,11 +1,27 @@
+import { UserAccount } from "@/interfaces/IUserAccount";
+import Image from "next/image";
 import { AiOutlineUser } from "react-icons/ai";
 
-export default function Avatar() {
+export default function Avatar(props: { user: UserAccount | null }) {
   return (
     <button className="btn-ghost btn-circle btn">
-      <div className="indicator">
-        <AiOutlineUser size={24} />
-      </div>
+      {props.user ? (
+        <>
+          {/* User Image */}
+          <Image
+            width={24}
+            height={24}
+            alt={props.user.firstName}
+            src={`${props.user.avatar}`}
+          />
+        </>
+      ) : (
+        <>
+          <div>
+            <AiOutlineUser size={24} />
+          </div>
+        </>
+      )}
     </button>
   );
 }

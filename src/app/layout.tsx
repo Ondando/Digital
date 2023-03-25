@@ -1,7 +1,8 @@
-import "./globals.css";
+import "@/styles/globals.css";
 import React from "react";
 import Header from "@/components/Header";
 import Sidebar from "@/components/SideBar";
+import Footer from "@/components/Footer";
 
 export default function RootLayout({
   children,
@@ -25,6 +26,7 @@ export default function RootLayout({
         <div className="drawer-content">
           <Header />
           {children}
+          <Footer/>
         </div>
         <Sidebar />
       </body>
