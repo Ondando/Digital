@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import Sidebar from "@/components/SideBar";
 import Footer from "@/components/Footer";
 
+//TODO: MAKE CSS TAIWINDCSS BETTER 
+
 export default function RootLayout({
   children,
 }: {
@@ -16,19 +18,21 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className="drawer">
-        <input
-          id="my-drawer"
-          type="checkbox"
-          className="drawer-toggle"
-          key={1}
-        />
-        <div className="drawer-content">
-          <Header />
-          {children}
-          <Footer/>
+      <body>
+        <div className="drawer">
+          <input
+            id="my-drawer"
+            type="checkbox"
+            className="drawer-toggle"
+            key={1}
+          />
+          <div className="drawer-content">
+            <Header />
+            {children}
+            <Footer />
+          </div>
+          <Sidebar />
         </div>
-        <Sidebar />
       </body>
     </html>
   );

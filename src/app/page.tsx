@@ -3,7 +3,7 @@ import FeatuedProductsSection from "./screens/FeatuedProductsSection";
 
 export default function Home() {
   return (
-    <main className="p-5">
+    <main>
       <div className="h-5 md:h-10" />
       <section>
         <SliderSection />

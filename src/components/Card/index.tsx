@@ -1,3 +1,4 @@
+import { Text } from "@/ui/Text";
 import Link from "next/link";
 
 export interface ICard {
@@ -6,6 +7,8 @@ export interface ICard {
   Seller: string;
   Price: string;
 }
+
+//TODO: MAKE CARD OnHover BETTER
 
 export const Card = ({ ProdutName, ProductImage, Seller, Price }: ICard) => {
   return (
@@ -17,7 +20,7 @@ export const Card = ({ ProdutName, ProductImage, Seller, Price }: ICard) => {
         <img src={ProductImage} alt={ProdutName} className="h-48" />
       </figure>
       <div className=" card-body">
-        <p>{ProdutName}</p>
+        <Text text={ProdutName} />
       </div>
     </Link>
   );
