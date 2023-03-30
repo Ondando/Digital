@@ -1,0 +1,101 @@
+type User {
+  email: String!
+  password: String!
+  firstName: String
+  lastName: String
+  roles: [UserRole!] @relation
+  vendor: Vendor @relation
+  orders: [Order!] @relation
+}
+
+type Role {
+  roleName: String!
+  users: [UserRole!] @relation
+}
+
+type UserRole {
+  user: User! @relation
+  role: Role! @relation
+}
+
+type Vendor {
+  user: User! @relation
+  companyName: String!
+  contactEmail: String
+  phoneNumber: String
+  vendorProducts: [VendorProduct!] @relation
+  vendorBankAccount: VendorBankAccount @relation
+  balance: Float!
+}
+
+type Category {
+  name: String!
+  products: [Product!] @relation
+}
+
+type Product {
+  category: Category! @relation
+  name: String!
+  description: String!
+  price: Float!
+  stock: Int!
+  vendorProducts: [VendorProduct!] @relation
+}
+
+type VendorProduct {
+  vendor: Vendor! @relation
+  product: Product! @relation
+  digitalKey: String!
+}
+
+type Order {
+  user: User! @relation
+  status: String!
+  totalAmount: Float!
+  orderItems: [OrderItem!] @relation
+  payment: Payment @relation
+}
+
+type OrderItem {
+  order: Order! @relation
+  product: Product! @relation
+  quantity: Int!
+  price: Float!
+}
+
+type BankAccount {
+  accountHolderName: String!
+  bankName: String!
+  accountNumber: String!
+  branchCode: String
+  swiftCode: String
+  iban: String
+}
+
+type Payment {
+  order: Order! @relation
+  bankAccount: BankAccount! @relation
+  transactionId: String!
+  amount: Float!
+  paymentDate: String!
+  status: String! # e.g., pending, completed, failed
+}
+
+type Payout {
+  vendor: Vendor! @relation
+  vendorBankAccount: VendorBankAccount! @relation
+  amount: Float!
+  paymentDate: String!
+  status: String! # e.g., pending, completed, failed
+}
+
+type VendorBankAccount {
+  vendor: Vendor! @relation
+  accountHolderName: String!
+  bankName: String!
+  accountNumber: String!
+  branchCode: String
+  swiftCode: String
+  iban: String
+  payouts: [Payout!] @relation
+}
