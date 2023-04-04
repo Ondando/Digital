@@ -2,11 +2,11 @@
   {
     "seller": "Seller",
     "product": "Product",
-    "price": 2
+    "price": 2000
   },
   {
     "seller": "Seller 2",
     "product": "Product 2",
-    "price": 30
+    "price": 30000
   }
 ]
