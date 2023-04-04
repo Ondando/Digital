@@ -1,4 +1,4 @@
-import { UserAccount } from "@/interfaces/IUserAccount";
+import { UserAccount } from "@/interfaces/IUser";
 import { AiFillShopping } from "react-icons/ai";
 
 export default function ShopCart({ user }: { user: UserAccount | null }) {

@@ -1,17 +1,14 @@
-import { Product } from "@/interfaces/IProduct";
-import { UserAccount } from "@/interfaces/IUserAccount";
 import usersDumbData from "./dumbData/usersDumbData.json";
 import productsDumbData from "./dumbData/productsDumbData.json";
 import sellDumbData from "./dumbData/sellDumbData.json";
 
 import { ICarouselContent } from "@/components/Carousel";
-import { Sell } from "@/interfaces/ISeller";
 
 export const Categorias = ["PC", "XBOX", "PS", "NEWS", "DAILY DEALS"];
 
-export const Users: UserAccount[] = usersDumbData;
+export const Users: any[] = usersDumbData;
 
-export const AllProducts: Product[] = productsDumbData;
+export const AllProducts: any[] = productsDumbData;
 
 export const CarouselProducts: ICarouselContent[] = [
   {
@@ -59,7 +56,7 @@ export const SideSectionProducts: ISideSectionProducts[] = [
   },
 ];
 
-export const FeaturedProducts: Product[] = [
+export const FeaturedProducts: any[] = [
   AllProducts[0],
   AllProducts[1],
   AllProducts[2],
@@ -70,4 +67,4 @@ export const FeaturedProducts: Product[] = [
   AllProducts[3],
 ];
 
-export const Sells: Sell[] = sellDumbData;
+export const Sells: any[] = sellDumbData;

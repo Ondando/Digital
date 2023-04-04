@@ -3,8 +3,9 @@ import React from "react";
 import Header from "@/components/Header";
 import Sidebar from "@/components/SideBar";
 import Footer from "@/components/Footer";
+import ContextProvider from "@/context/ContextProvider";
 
-//TODO: MAKE CSS TAIWINDCSS BETTER 
+//TODO: MAKE CSS TAIWINDCSS BETTER
 
 export default function RootLayout({
   children,
@@ -19,20 +20,22 @@ export default function RootLayout({
       */}
       <head />
       <body>
-        <div className="drawer">
-          <input
-            id="my-drawer"
-            type="checkbox"
-            className="drawer-toggle"
-            key={1}
-          />
-          <div className="drawer-content">
-            <Header />
-            {children}
-            <Footer />
+        <ContextProvider>
+          <div className="drawer">
+            <input
+              id="my-drawer"
+              type="checkbox"
+              className="drawer-toggle"
+              key={1}
+            />
+            <div className="drawer-content">
+              <Header />
+              {children}
+              <Footer />
+            </div>
+            <Sidebar />
           </div>
-          <Sidebar />
-        </div>
+        </ContextProvider>
       </body>
     </html>
   );

@@ -1,4 +1,4 @@
-import { UserAccount } from "@/interfaces/IUserAccount";
+import { UserAccount } from "@/interfaces/IUser";
 import Image from "next/image";
 import { AiOutlineUser } from "react-icons/ai";
 

@@ -1,4 +1,4 @@
-import { UserAccount } from "@/interfaces/IUserAccount";
+import { UserAccount } from "@/interfaces/IUser";
 import { AiOutlineHeart } from "react-icons/ai";
 
 export default function WishList({ user }: { user: UserAccount | null }) {

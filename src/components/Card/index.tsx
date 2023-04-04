@@ -1,6 +1,5 @@
 import { Text } from "@/ui/Text";
 import Link from "next/link";
-import { Product } from "@/interfaces/IProduct";
 
 export interface ICard {
   name: string;
