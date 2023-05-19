@@ -1,0 +1,128 @@
+type User {
+  id: ID!
+  firstName: String
+  lastName: String
+  email: String! @unique
+  password: String!
+  role: UserRole!
+  createdAt: String!
+  updatedAt: String!
+  wishlists: [Wishlist]
+  reviews: [Review]
+  seller: Seller
+}
+
+enum UserRole {
+  USER
+  SELLER
+  SYSTEM_MANAGER
+}
+
+type Seller {
+  id: ID!
+  storeName: String!
+  createdAt: String!
+  updatedAt: String!
+  sellerProducts: [SellerProduct]
+  payouts: [Payout]
+  user: User!
+  bankAccount: String
+}
+
+type Payout {
+  id: ID!
+  seller: Seller!
+  amount: Float!
+  status: PayoutStatus!
+  createdAt: String!
+  updatedAt: String!
+}
+
+enum PayoutStatus {
+  PENDING
+  COMPLETED
+  CANCELED
+}
+
+type Product {
+  id: ID!
+  name: String!
+  slug: String! @unique
+  category: Category!
+  shortDescription: String!
+  longDescription: String!
+  thumbnail: String
+  additionalImages: [String!]
+  tags: [Tag!]
+  createdAt: String!
+  updatedAt: String!
+  wishlists: [Wishlist!]
+}
+
+type Tag {
+  id: ID!
+  name: String! @unique
+  products: [Product!]
+  createdAt: String!
+  updatedAt: String!
+}
+
+type SellerProduct {
+  id: ID!
+  product: Product!
+  price: Float!
+  seller: Seller!
+  digitalKey: String! @unique
+  status: SellerProductStatus!
+  createdAt: String!
+  updatedAt: String!
+  review: Review
+}
+
+enum SellerProductStatus {
+  ACTIVE
+  OUT_OF_STOCK
+  DISCONTINUED
+}
+
+type Category {
+  id: ID!
+  name: String!
+  parent: Category
+  products: [Product!]
+  createdAt: String!
+  updatedAt: String!
+}
+
+type Review {
+  id: ID! @unique
+  user: User!
+  sellerProduct: SellerProduct!
+  rating: Int!
+  comment: String
+  createdAt: String!
+  updatedAt: String!
+}
+
+type Wishlist {
+  id: ID!
+  user: User!
+  products: [Product!]
+  createdAt: String!
+  updatedAt: String!
+}
+
+type Order {
+  id: ID!
+  user: User!
+  sellerProduct: SellerProduct!
+  paymentStatus: PaymentStatus!
+  createdAt: String!
+  updatedAt: String!
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  REFUNDED
+}
